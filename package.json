@@ -1,0 +1,48 @@
+{
+  "name": "mt-faker",
+  "version": "1.0.0",
+  "description": "Generate fake data for taiwanese",
+  "keywords": [
+    "mt faker",
+    "mt-faker",
+    "fake data for taiwanese"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/motea927/mt-faker.git"
+  },
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "node": "./dist/cjs/index.js",
+      "es2015": "./dist/esm/index.js",
+      "default": "./dist/esm/index.js"
+    },
+    "./locale/*": {
+      "node": "./dist/cjs/locale/*.js",
+      "es2015": "./dist/esm/locale/*.js",
+      "default": "./dist/esm/locale/*.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "tsconfig.json"
+  ],
+  "scripts": {
+    "build:clean": "rimraf dist",
+    "build:code": "esno ./scripts/bundle.ts",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist/types",
+    "build": "run-s build:clean build:code build:types",
+    "test": "vitest"
+  },
+  "author": "motea927@yahoo.com.tw",
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.6.2",
+    "vitest": "^0.6.1"
+  }
+}
