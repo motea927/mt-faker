@@ -1,5 +1,9 @@
+import { DataType } from './api/dataType'
+
 export class MtFaker {
-  init() {
+  readonly init = () => {
     return 'hello world!'
   }
+
+  readonly dataType: DataType = new DataType()
 }
