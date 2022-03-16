@@ -1,4 +1,5 @@
 import { DataType } from './api/dataType'
+import { Name } from './api/name'
 
 export class MtFaker {
   readonly init = () => {
@@ -6,4 +7,6 @@ export class MtFaker {
   }
 
   readonly dataType: DataType = new DataType()
+
+  readonly name: Name = new Name()
 }
